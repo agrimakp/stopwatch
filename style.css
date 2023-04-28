@@ -24,6 +24,9 @@ h1 {
    text-transform: uppercase;
 }
 
+ul {
+    /* list-style: none; */
+}
 .wrapper{
  display: flex;
  flex-direction: column;

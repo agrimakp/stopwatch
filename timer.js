@@ -1,11 +1,11 @@
 window.onload = () => {
-    var minutes = 0;
-    var seconds = 0;
-
+    let minutes = 0;
+    let seconds = 0;
+    let resetHistory = [];
 
     renderTime = (minutes, seconds) => {
-        var secondDisplay = document.getElementById("seconds");
-        var minutesDisplay = document.getElementById("minutes");
+        let secondDisplay = document.getElementById("seconds");
+        let minutesDisplay = document.getElementById("minutes");
         if (seconds > 9) {
             secondDisplay.innerHTML = seconds;
         } else {
@@ -18,12 +18,20 @@ window.onload = () => {
         }
     }
 
+    renderHistory = (history) => {
+        let list = document.getElementById("history");
+        items = history.map(item => {
+            return `<li>${item.minutes}:${item.seconds}</li>`;
+        })
+        list.innerHTML = items.join("\n")
+    }
 
-    var btnStart = document.getElementById("btn-start");
-    var btnStop = document.getElementById("btn-stop");
-    var btnReset = document.getElementById("btn-reset");
 
-    var interval
+    let btnStart = document.getElementById("btn-start");
+    let btnStop = document.getElementById("btn-stop");
+    let btnReset = document.getElementById("btn-reset");
+
+    let interval
 
     btnStart.onclick = () => {
         clearInterval(interval)
@@ -35,10 +43,14 @@ window.onload = () => {
     }
 
     btnReset.onclick = () => {
+        resetHistory.push({ minutes, seconds })
         minutes = 0;
         seconds = 0;
         renderTime(minutes, seconds)
+        renderHistory(resetHistory)
     }
+
+    history.innerHTML = resetHistory;
 
     function timer() {
         seconds++;
