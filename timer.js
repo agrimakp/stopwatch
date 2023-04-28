@@ -1,5 +1,4 @@
 window.onload = () => {
-    console.log("hai")
     var minutes = 0;
     var seconds = 0;
 
