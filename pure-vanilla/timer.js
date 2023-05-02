@@ -10,13 +10,9 @@ window.onload = () => {
         // convert seconds into minute and seconds (100cs = 1 second)
         let seconds = Math.floor(input / 100);
 
-        output.minutes = Math.floor(seconds / 60);
-        output.seconds = seconds % 60;
         output.cs = input % 100;
-
-        console.log(input, output, seconds)
-
-        // cs?
+        output.seconds = seconds % 60;
+        output.minutes = Math.floor(seconds / 60);
 
         // add leading zero if number less than 2 digits
         if (output.seconds <= 9) {
@@ -50,7 +46,7 @@ window.onload = () => {
         let list = document.getElementById("history");
         items = history.map(item => {
             let time = formatTime(item);
-            return `<li>${time.minutes}:${time.seconds}</li>`;
+            return `<li>${time.minutes}:${time.seconds}:${time.cs}</li>`;
         })
         list.innerHTML = items.join("\n")
     }
