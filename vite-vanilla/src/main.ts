@@ -3,8 +3,7 @@ import './stopwatch.css'
 import { setStopWatch } from './stopwatch'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div class="container">
-  <div class="wrapper" id="counter1">
+ <div class="wrapper" id="counter1">
       <h1>StopWatch 1</h1>
 
       <p>
@@ -30,8 +29,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           <ul id="history">
           </ul>
       </div>
-  </div>
-  
   </div>
 `
 
