@@ -5,7 +5,7 @@ import { setStopWatch } from './stopwatch'
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div class="container">
   <div class="wrapper" id="counter1">
-      <h1>StopWatch1</h1>
+      <h1>StopWatch 1</h1>
 
       <p>
           <span id="minutes">00</span>
@@ -32,7 +32,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </div>
   </div>
   <div class="wrapper" id="counter2">
-      <h1>StopWatch2</h1>
+      <h1>StopWatch 2</h1>
 
       <p>
           <span id="minutes">00</span>
